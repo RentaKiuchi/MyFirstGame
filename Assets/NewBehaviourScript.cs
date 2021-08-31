@@ -7,27 +7,28 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        
+    }
+    public float amplitude= 0.01f; // 振幅
+    private int frameCnt = 0; // フレームカウント
+    void FixedUpdate()
+    {
+        frameCnt += 1;
+        if (10000 <= frameCnt)
         {
-            transform.Translate(0f, 0f, 0.1f);
+            frameCnt = 0;
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (0 == frameCnt % 2)
         {
-            transform.Translate(0f, 0f, -0.1f);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(-0.1f, 0f, 0f);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(0.1f, 0f, 0f);
+            // 上下に振動させる（ふわふわを表現）
+            float posYSin = Mathf.Sin(2.0f * Mathf.PI * (float)(frameCnt % 200) / (200.0f - 1.0f));
+            iTween.MoveAdd(gameObject, new Vector3(amplitude * posYSin, 0, 0), 0.0f);
         }
     }
 }
