@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CursorShotScript : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class CursorShotScript : MonoBehaviour
 	//　カーソルに使用するテクスチャ
 	[SerializeField]
 	private Texture2D cursor;
+	private int score = 0;
+	public Text scoreText; //Text用変数
 
 	void Start()
 	{
@@ -17,7 +20,7 @@ public class CursorShotScript : MonoBehaviour
 	void Update()
 	{
 		//　マウスの左クリックで撃つ
-		if (Input.GetButtonDown("Fire1"))
+		if (Input.GetMouseButton(0))
 		{
 			Shot();
 		}
@@ -28,10 +31,33 @@ public class CursorShotScript : MonoBehaviour
 	{
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
-
-		if (Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("Enemy")))
+		int layer = LayerMask.NameToLayer("Enemy");
+		int layer_mask = 1 << layer;
+		if (Physics.Raycast(ray, out hit, 100f, layer_mask))
 		{
+			if(hit.collider.gameObject.tag == "judo")
+			{
+				score += 1200;
+			}
+			if (hit.collider.gameObject.tag == "resuring")
+			{
+				score += 700;
+			}
+			if (hit.collider.gameObject.tag == "sukebo")
+			{
+				score += 500;
+			}
+			if (hit.collider.gameObject.tag == "taisou")
+			{
+				score += 500;
+			}
+			if (hit.collider.gameObject.tag == "takkyu")
+			{
+				score += 400;
+			}
+			scoreText.text = string.Format("Score:{0}", score);
 			Destroy(hit.collider.gameObject);
 		}
 	}
+
 }
