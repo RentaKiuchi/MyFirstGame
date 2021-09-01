@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class CountDown : MonoBehaviour
+public class threecount : MonoBehaviour
 {
-    
-    private float time = 30.0f;
+    private float time = 3.0f;
     public Text timerText;
     public bool isTimeUp;
 
@@ -18,7 +17,6 @@ public class CountDown : MonoBehaviour
 
     void Update()
     {
-        GameObject obj = GameObject.Find("GameObject");
         if (0 < time)
         {
             time -= Time.deltaTime;
@@ -27,8 +25,7 @@ public class CountDown : MonoBehaviour
         else if (time < 0)
         {
             isTimeUp = true;
-            //Time.timeScale = 0;
-            Destroy(obj);
+            SceneManager.LoadScene("Sample");
         }
     }
-  }
+}

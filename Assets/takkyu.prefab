@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 883910032649831885}
   m_Layer: 3
   m_Name: takkyu
-  m_TagString: resuring
+  m_TagString: takkyu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

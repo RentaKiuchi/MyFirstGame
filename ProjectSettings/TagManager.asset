@@ -9,6 +9,7 @@ TagManager:
   - taisou
   - resuring
   - takkyu
+  - mob
   layers:
   - Default
   - TransparentFX
