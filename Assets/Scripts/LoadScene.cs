@@ -26,6 +26,10 @@ public class LoadScene : MonoBehaviour
         Invoke("Title", 1);
     }
 
+    public void Tutorial()
+    {
+        Invoke("Tokui", 1);
+    }
     void scene()
     {
         SceneManager.LoadScene("count");
@@ -34,5 +38,10 @@ public class LoadScene : MonoBehaviour
     void Title()
     {
         SceneManager.LoadScene("Title");
+    }
+
+    void Tokui()
+    {
+        SceneManager.LoadScene("tutorial");
     }
 }
