@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 
 public class CursorShotScript : MonoBehaviour
 {
-
 	//　カーソルに使用するテクスチャ
 	[SerializeField]
 	private Texture2D cursor;
@@ -36,6 +35,7 @@ public class CursorShotScript : MonoBehaviour
 		int layer_mask = 1 << layer;
 		if (Physics.Raycast(ray, out hit, 100f, layer_mask))
 		{
+			GetComponent<AudioSource>().Play();
 			if (EventSystem.current.IsPointerOverGameObject())
 			{
 				// かぶさってるので処理キャンセル（マウスクver）
@@ -44,22 +44,27 @@ public class CursorShotScript : MonoBehaviour
 			if (hit.collider.gameObject.tag == "judo")
 			{
 				score += 1200;
+				
 			}
 			if (hit.collider.gameObject.tag == "resuring")
 			{
 				score += 700;
+				
 			}
 			if (hit.collider.gameObject.tag == "sukebo")
 			{
 				score += 500;
+				
 			}
 			if (hit.collider.gameObject.tag == "taisou")
 			{
 				score += 500;
+				
 			}
 			if (hit.collider.gameObject.tag == "takkyu")
 			{
 				score += 400;
+				
 			}
 			scoreText.text = string.Format("Score:{0}", score);
 			Destroy(hit.collider.gameObject);
