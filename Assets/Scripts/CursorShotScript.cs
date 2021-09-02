@@ -9,11 +9,12 @@ public class CursorShotScript : MonoBehaviour
 	//　カーソルに使用するテクスチャ
 	[SerializeField]
 	private Texture2D cursor;
-	public static int score = 0;
+	public static int score;
 	public Text scoreText; //Text用変数
 
 	void Start()
 	{
+		score = 0;
 		//　カーソルを自前のカーソルに変更
 		Cursor.SetCursor(cursor, new Vector2(cursor.width / 2, cursor.height / 2), CursorMode.ForceSoftware);
 	}

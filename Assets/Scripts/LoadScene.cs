@@ -18,17 +18,17 @@ public class LoadScene : MonoBehaviour
 
     public void StartGame()
     {
-        Invoke("scene", 1); 
+        FadeManager.Instance.LoadScene("count", 0.5f);
     }
 
     public void goTItle()
     {
-        Invoke("Title", 1);
+        FadeManager.Instance.LoadScene("Title", 0.5f);
     }
 
     public void Tutorial()
     {
-        Invoke("Tokui", 1);
+        FadeManager.Instance.LoadScene("tutorial", 0.5f);
     }
     void scene()
     {
