@@ -20,9 +20,8 @@ You will be ranked according to your score.
 
 # Note
  
-タイトル画面からほかの画面に遷移した後再度タイトル画面にもどると背景が気持ち悪くなりますが、仕様です。気にしないでください。
- 
-If you go from the title screen to another screen and then back to the title screen again, the background may look weird. Please don't worry about it.
+当方はじめてのUnityでのゲーム制作ですのでUIなどは全然凝ったつくりになっていません。気にしないでください。
+This is my first time creating a game in Unity, so the UI is not very elaborate at all. Please don't worry about it.
 
 # Author
  
