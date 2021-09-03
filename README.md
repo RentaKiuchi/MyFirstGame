@@ -5,7 +5,7 @@
 
 # DEMO
  
-![screenshot](https://user-images.githubusercontent.com/69044593/13194763-3b12727a-83bb-475b-8bb1-8fc8330da762.png)
+https://github.com/RentaKiuchi/MyFirstGame/issues/1#issue-987367875
  
 # Features
  
