@@ -4,7 +4,8 @@
 As the name suggests, this is a game to destroy the pictogram.
  
 # DEMO
- 
+ ![screenshot](https://user-images.githubusercontent.com/69044593/131947663-3b12727a-83bb-475b-8bb1-8fc8330da762.png)
+
 
  
 # Features
